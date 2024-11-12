@@ -12,7 +12,7 @@ class RVPopularMenuAdapter(
         private val binding: ItemMenuCategoryBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MenuCategoryData) {
-            binding.ivMenuCategoryImg.setImageResource(item.menuCategoryImg)
+            binding.sivMenuCategoryImg.setImageResource(item.menuCategoryImg)
             binding.tvMenuCategoryName.text = item.menuCategoryName
         }
     }
