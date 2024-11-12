@@ -5,22 +5,22 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [MenuCategoryData::class], version = 1)
-abstract class MenuCategoryDB : RoomDatabase() {
-    abstract fun menuDao(): MenuCategoryDao
+@Database(entities = [CategoryData::class], version = 1)
+abstract class CategoryDB : RoomDatabase() {
+    abstract fun menuDao(): CategoryDao
 
     companion object {
-        private var instance: MenuCategoryDB? = null
+        private var instance: CategoryDB? = null
 
         @Synchronized
-        fun getInstance(context: Context): MenuCategoryDB {
+        fun getInstance(context: Context): CategoryDB {
             if (instance == null) {
                 instance =
                     Room
                         .databaseBuilder(
                             context,
-                            MenuCategoryDB::class.java,
-                            "menu_database",
+                            CategoryDB::class.java,
+                            "category_database",
                         ).build()
             }
 

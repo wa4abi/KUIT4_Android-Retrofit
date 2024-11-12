@@ -10,17 +10,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kuit4_android_retrofit.data.MenuCategoryDB
-import com.example.kuit4_android_retrofit.data.MenuCategoryData
+import com.example.kuit4_android_retrofit.data.CategoryDB
+import com.example.kuit4_android_retrofit.data.CategoryData
 import com.example.kuit4_android_retrofit.databinding.FragmentHomeBinding
-import com.example.kuit4_android_retrofit.databinding.ItemMenuCategoryBinding
+import com.example.kuit4_android_retrofit.databinding.ItemCategoryBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var db: MenuCategoryDB
+    private lateinit var db: CategoryDB
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        db = MenuCategoryDB.getInstance(requireContext())
+        db = CategoryDB.getInstance(requireContext())
 
         initDatabaseIfNeeded()
         loadCategoryItems()
@@ -43,15 +43,15 @@ class HomeFragment : Fragment() {
         if (!sharedPreferences.getBoolean("isDataInitialized", false)) {
             lifecycleScope.launch(Dispatchers.IO) {
                 db.menuDao().apply {
-                    insert(MenuCategoryData(getString(R.string.pork_cutlet), R.drawable.img_pork_cutlet))
-                    insert(MenuCategoryData(getString(R.string.japanese_food), R.drawable.img_japanese_food))
-                    insert(MenuCategoryData(getString(R.string.korean_food), R.drawable.img_korean_food))
-                    insert(MenuCategoryData(getString(R.string.chicken), R.drawable.img_chicken))
-                    insert(MenuCategoryData(getString(R.string.snack_food), R.drawable.img_snack_food))
-                    insert(MenuCategoryData(getString(R.string.bossam), R.drawable.img_bossam))
-                    insert(MenuCategoryData(getString(R.string.soup), R.drawable.img_soup))
-                    insert(MenuCategoryData(getString(R.string.barbeque), R.drawable.img_barbeque))
-                    insert(MenuCategoryData(getString(R.string.pizza), R.drawable.img_pizza))
+                    insert(CategoryData(getString(R.string.pork_cutlet), R.drawable.img_pork_cutlet))
+                    insert(CategoryData(getString(R.string.japanese_food), R.drawable.img_japanese_food))
+                    insert(CategoryData(getString(R.string.korean_food), R.drawable.img_korean_food))
+                    insert(CategoryData(getString(R.string.chicken), R.drawable.img_chicken))
+                    insert(CategoryData(getString(R.string.snack_food), R.drawable.img_snack_food))
+                    insert(CategoryData(getString(R.string.bossam), R.drawable.img_bossam))
+                    insert(CategoryData(getString(R.string.soup), R.drawable.img_soup))
+                    insert(CategoryData(getString(R.string.barbeque), R.drawable.img_barbeque))
+                    insert(CategoryData(getString(R.string.pizza), R.drawable.img_pizza))
                 }
 
                 with(sharedPreferences.edit()) {
@@ -84,12 +84,12 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun addCategoryItems(categoryList: List<MenuCategoryData>) {
+    private fun addCategoryItems(categoryList: List<CategoryData>) {
         val inflater = LayoutInflater.from(requireContext())
         categoryList.forEach { category ->
-            val categoryBinding = ItemMenuCategoryBinding.inflate(inflater, binding.hsvMainMenuCategory, false)
-            categoryBinding.sivMenuCategoryImg.setImageResource(category.menuCategoryImg)
-            categoryBinding.tvMenuCategoryName.text = category.menuCategoryName
+            val categoryBinding = ItemCategoryBinding.inflate(inflater, binding.hsvMainMenuCategory, false)
+            categoryBinding.sivCategoryImg.setImageResource(category.categoryImg)
+            categoryBinding.tvCategoryName.text = category.categoryName
             binding.llMainMenuCategory.addView(categoryBinding.root)
         }
     }
