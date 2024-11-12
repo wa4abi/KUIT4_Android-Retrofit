@@ -88,7 +88,7 @@ class HomeFragment : Fragment() {
         val inflater = LayoutInflater.from(requireContext())
         categoryList.forEach { category ->
             val categoryBinding = ItemMenuCategoryBinding.inflate(inflater, binding.hsvMainMenuCategory, false)
-            categoryBinding.ivMenuCategoryImg.setImageResource(category.menuCategoryImg)
+            categoryBinding.sivMenuCategoryImg.setImageResource(category.menuCategoryImg)
             categoryBinding.tvMenuCategoryName.text = category.menuCategoryName
             binding.llMainMenuCategory.addView(categoryBinding.root)
         }
