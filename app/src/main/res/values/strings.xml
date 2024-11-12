@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">KUIT4_Android-Retrofit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pork_cutlet">돈까스</string>
+    <string name="japanese_food">일식</string>
+    <string name="korean_food">한식</string>
+    <string name="chicken">치킨</string>
+    <string name="snack_food">분식</string>
+    <string name="bossam">족발/보쌈</string>
+    <string name="soup">죽</string>
+    <string name="barbeque">고기</string>
+    <string name="pizza">피자</string>
+</resources>

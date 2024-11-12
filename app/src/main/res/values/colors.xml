@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Neutral_50">#FBFBFD</color>
+    <color name="Neutral_100">#F7F7F9</color>
+    <color name="Neutral_300">#E5E5E7</color>
+    <color name="Neutral_400">#C2C2C4</color>
+    <color name="Neutral_500">#A4A4A6</color>
+    <color name="Neutral_700">#666668</color>
+    <color name="Neutral_900">#252527</color>
+    <color name="Neutral_Black">#000000</color>
+
+    <color name="Neutral_White">#FFFFFF</color>
+</resources>
