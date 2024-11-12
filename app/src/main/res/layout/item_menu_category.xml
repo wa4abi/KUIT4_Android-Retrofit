@@ -5,7 +5,7 @@
     android:layout_marginEnd="16dp">
 
     <ImageView
-        android:id="@+id/iv_main_category"
+        android:id="@+id/iv_menu_category_img"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_main_category_name"
+        android:id="@+id/tv_menu_category_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="4dp"
@@ -23,5 +23,5 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_main_category" />
+        app:layout_constraintTop_toBottomOf="@id/iv_menu_category_img" />
 </androidx.constraintlayout.widget.ConstraintLayout>

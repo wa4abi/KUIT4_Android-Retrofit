@@ -2,16 +2,16 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kuit4_android_retrofit.data.MenuData
+import com.example.kuit4_android_retrofit.data.MenuCategoryData
 import com.example.kuit4_android_retrofit.databinding.ItemCategoryMenuBinding
 
 class RVPopularMenuAdapter(
-    private val menuList: List<MenuData>,
+    private val menuList: List<MenuCategoryData>,
 ) : RecyclerView.Adapter<RVPopularMenuAdapter.ViewHolder>() {
     inner class ViewHolder(
         private val binding: ItemCategoryMenuBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: MenuData) {
+        fun bind(item: MenuCategoryData) {
             binding.ivMainCategory.setImageResource(item.menuImg)
             binding.tvMainCategoryName.text = item.menuName
         }

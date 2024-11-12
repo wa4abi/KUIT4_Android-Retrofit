@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class MenuData(
-    val menuName: String,
-    val menuImg: Int,
+data class MenuCategoryData(
+    val menuCategoryName: String,
+    val menuCategoryImg: Int,
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
 )
